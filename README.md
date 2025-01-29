@@ -31,6 +31,7 @@ A unified system for managing a dynamic 3D memory substrate, mapping named I/O p
 This design is particularly suited for experimental AI architectures, multi-genome neural nets, or any system that requires flexible memory addressing and I/O management.
 
 [Back to Contents](#table-of-contents)
+
 ---
 
 ## Features
@@ -58,6 +59,7 @@ This design is particularly suited for experimental AI architectures, multi-geno
    - Switch to sparse matrix storage if needed.
      
 [Back to Contents](#table-of-contents)
+
 ---
 
 ## Installation
@@ -74,6 +76,7 @@ import Crown from './Crown.js';
 (Adjust the path as needed.)
 
 [Back to Contents](#table-of-contents)
+
 ---
 
 ## Usage
@@ -240,6 +243,7 @@ console.log("Restored genomes:", crown2.listGenomes()); // => [ "genome1" ]
   For large neural layers, you might add a helper method like `registerLayer(genomeId, layerName, neuronCount, rowSize, colSize)`.
   
 [Back to Contents](#table-of-contents)
+
 ---
 
 ## License
@@ -247,6 +251,7 @@ console.log("Restored genomes:", crown2.listGenomes()); // => [ "genome1" ]
 MIT License (or your license of choice). Feel free to modify and use `Crown.js` in your projects. If you share improvements, consider contributing them back to the community!
 
 [Back to Contents](#table-of-contents)
+
 ---
 
 *Happy building!*  
