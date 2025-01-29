@@ -29,6 +29,7 @@ A unified system for managing a dynamic 3D memory substrate, mapping named I/O p
 - Easily **serialize** the entire state (memory + I/O maps + network) to JSON and **deserialize** it to resume state later.
 
 This design is particularly suited for experimental AI architectures, multi-genome neural nets, or any system that requires flexible memory addressing and I/O management.
+
 [Back to Contents](#table-of-contents)
 ---
 
@@ -55,6 +56,7 @@ This design is particularly suited for experimental AI architectures, multi-geno
 5. **Expandable & Modular**  
    - Easily extend partitioning logic, concurrency, or custom update rules.  
    - Switch to sparse matrix storage if needed.
+     
 [Back to Contents](#table-of-contents)
 ---
 
@@ -70,6 +72,7 @@ import Crown from './Crown.js';
 ```
 
 (Adjust the path as needed.)
+
 [Back to Contents](#table-of-contents)
 ---
 
@@ -87,6 +90,7 @@ This creates:
 - An empty memory map (`nodesMap` + `usedAddresses`).  
 - Empty I/O mappings (`inputs` + `outputs`).  
 - A default `network` object containing a `genomePool`.
+  
 [Back to Contents](#table-of-contents)
 
 ### Memory Operations
@@ -106,6 +110,7 @@ This creates:
 - `set(xx, yy, zz, row, col, newValue)`: Creates/expands if needed.  
 - `get(xx, yy, zz, row, col)`: Gets a single cell’s value.  
 - `getDimensions(xx, yy, zz)`: Returns `[numRows, numCols]` for that node.
+  
 [Back to Contents](#table-of-contents)
 
 ### I/O Mapping
@@ -127,6 +132,7 @@ const sensorAAddr = crown.getInputAddress("sensorA");
 
 const motorBAddr = crown.getOutputAddress("motorB");
 ```
+
 [Back to Contents](#table-of-contents)
 
 ### Network / Genome Pool
@@ -144,6 +150,7 @@ crown.addGenome("genome1", { fitness: 42, weights: [0.1, 0.2, 0.3] });
 const g1 = crown.getGenome("genome1");
 console.log(g1.fitness); // 42
 ```
+
 [Back to Contents](#table-of-contents)
 
 ### Serialization / Deserialization
@@ -171,6 +178,7 @@ newCrown.fromJSON(JSON.parse(stateString));
 
 // Now 'newCrown' has the same memory, I/O mappings, and genome pool as 'crown'
 ```
+
 [Back to Contents](#table-of-contents)
 
 ---
@@ -212,6 +220,7 @@ console.log("Restored matrix:", crown2.getAllData(sensorA2.xx, sensorA2.yy, sens
 // 8) Check genomes
 console.log("Restored genomes:", crown2.listGenomes()); // => [ "genome1" ]
 ```
+
 [Back to Contents](#table-of-contents)
 
 ---
@@ -229,12 +238,14 @@ console.log("Restored genomes:", crown2.listGenomes()); // => [ "genome1" ]
 
 - **Bulk Registration**  
   For large neural layers, you might add a helper method like `registerLayer(genomeId, layerName, neuronCount, rowSize, colSize)`.
+  
 [Back to Contents](#table-of-contents)
 ---
 
 ## License
 
 MIT License (or your license of choice). Feel free to modify and use `Crown.js` in your projects. If you share improvements, consider contributing them back to the community!
+
 [Back to Contents](#table-of-contents)
 ---
 
