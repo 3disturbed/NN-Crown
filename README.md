@@ -2,7 +2,7 @@
 
 A unified system for managing a dynamic 3D memory substrate, mapping named I/O points, and storing genome/network data—with full support for serialization and deserialization.
 
-**Table of Contents**
+##Table of Contents
 
 1. [Introduction](#introduction)  
 2. [Features](#features)  
